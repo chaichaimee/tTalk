@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tTalk Add-on</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>tTalk Add-on</h1>
+
+    <p><strong>Summary:</strong> tTalk</p>
+    <p><strong>Description:</strong> Monitors clipboard content, maintains a history, and announces content in English or Thai.</p>
+    <p><strong>Author:</strong> 'chai chaimee</p>
+    <p><strong>Version:</strong> 2025.5</p>
+    <p><strong>Minimum NVDA Version:</strong> 2022.4</p>
+    <p><strong>Last Tested NVDA Version:</strong> 2025.1</p>
+    <p><strong>URL:</strong> <a href="https://github.com/chaichaimee/tTalk">https://github.com/chaichaimee/tTalk</a></p>
+
+    <h2>Features</h2>
+    <ul>
+        <li><strong>Clipboard Monitoring:</strong> Keeps track of copied content.</li>
+        <li><strong>Language Toggle:</strong> Announce clipboard actions and messages in either English or Thai.</li>
+        <li><strong>Announce Standard Clipboard Actions:</strong> Speaks out when you perform copy, paste, cut, undo, select all, and save operations.</li>
+        <li><strong>Smart Copy in Browse Mode:</strong> Automatically copies selected text in browse mode (e.g., web browsers) before announcing.</li>
+    </ul>
+
+    <h2>Key Commands</h2>
+    <p>These commands are designed for ease of use:</p>
+    <ul>
+        <li><strong>NVDA+Alt+T:</strong> Toggles the announcement language between English and Thai.</li>
+        <li><strong>Ctrl+C:</strong> Announce "copy" and performs the copy action.</li>
+        <li><strong>Ctrl+V:</strong> Announce "paste" and performs the paste action.</li>
+        <li><strong>Ctrl+X:</strong> Announce "cut" and performs the cut action.</li>
+        <li><strong>Ctrl+Z:</strong> Announce "undo" and performs the undo action.</li>
+        <li><strong>Ctrl+A:</strong> Announce "select all" and performs the select all action.</li>
+        <li><strong>Ctrl+S:</strong> Announce "save" and performs the save action.</li>
+    </ul>
+
+    <h2>Technical Details (For Developers/Advanced Users)</h2>
+    <p>The add-on uses standard NVDA global plugin architecture. Key functions include:</p>
+    <ul>
+        <li><code>GlobalPlugin</code>: The main class handling global gestures.</li>
+        <li><code>__init__</code>: Initializes language settings and binds gestures.</li>
+        <li><code>script_toggleLanguage</code>: Switches the internal language state and announces the change.</li>
+        <li><code>script_announceCopy</code>: Handles the copy command, with special logic for copying text in NVDA's browse mode before sending the standard Ctrl+C.</li>
+        <li><code>script_announcePaste</code>: Announces paste and sends the Ctrl+V keypress.</li>
+        <li><code>script_announceCut</code>: Announces cut and sends the Ctrl+X keypress.</li>
+        <li><code>script_announceUndo</code>: Announces undo and sends the Ctrl+Z keypress.</li>
+        <li><code>script_announceSelectAll</code>: Announces select all and sends the Ctrl+A keypress.</li>
+        <li><code>script_announceSave</code>: Announces save and sends the Ctrl+S keypress.</li>
+    </ul>
+
+    <h2>Troubleshooting</h2>
+    <p>If you encounter issues, please check the NVDA log for messages starting with "tTalk:". Common issues might include:</p>
+    <ul>
+        <li><strong>Key binding conflicts:</strong> If a gesture fails to bind, an error message will be spoken and logged.</li>
+        <li><strong>Language switching errors:</strong> Errors during language announcement will be logged.</li>
+    </ul>
+    <p>For further assistance, please refer to the GitHub repository.</p>
+
+</body>
+</html>
