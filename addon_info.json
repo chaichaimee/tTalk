@@ -1,0 +1,10 @@
+﻿{
+  "addon_name": "tTalk",
+  "addon_description": "Monitors clipboard content, maintains a history, and announces content in English or Thai",
+  "addon_version": "2025.7",
+  "addon_author": "chaichaimee",
+  "addon_url": "https://github.com/chaichaimee/tTalk",
+  "addon_download_url": "https://github.com/chaichaimee/tTalk/releases/download/v2025.7/tTalk-v2025.7.nvda-addon",
+  "addon_min_nvda_version": "2022.4"
+}
+
